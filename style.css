@@ -1,0 +1,222 @@
+/* ---------------------------------------------------------
+   BUSY — Medical Top-up Premium Calculator (Renewal 2026)
+   Token system
+   Ink      #10192E  primary text / header
+   Signal   #2A6DF4  brand blue (from the logo's "U" drop)
+   Paper    #F5F7FB  card background
+   Field    #FFFFFF  input surface
+   Hairline #E1E6EF  borders / dividers
+   Mint     #0E7C55  positive result
+   Ember    #D9662B  reset / secondary action
+   --------------------------------------------------------- */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #DCE4F0;
+  font-family: "Segoe UI", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0.25in;
+}
+
+.card {
+  width: 4in;
+  height: 2.5in;
+  background: #F5F7FB;
+  border-radius: 0.09in;
+  box-shadow: 0 0.06in 0.18in rgba(16, 25, 46, 0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Signature accent: a thin blue capsule echoing the drop inside the BUSY "U" */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.05in;
+  height: 100%;
+  background: #2A6DF4;
+}
+
+/* ---------- Header ---------- */
+.head {
+  background: #10192E;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.08in;
+  padding: 0.09in 0.12in 0.09in 0.16in;
+  flex: 0 0 auto;
+}
+
+.logo {
+  height: 0.22in;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.head-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  margin-left: auto;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.eyebrow {
+  font-size: 7.5pt;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #9FB2D9;
+  font-weight: 600;
+}
+
+.badge {
+  font-size: 8pt;
+  font-weight: 700;
+  color: #6FA0FF;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Controls ---------- */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.08in;
+  padding: 0.07in 0.16in;
+  border-bottom: 1px solid #E1E6EF;
+  flex: 0 0 auto;
+}
+
+.controls label {
+  font-size: 8pt;
+  font-weight: 600;
+  color: #10192E;
+  white-space: nowrap;
+}
+
+#plan {
+  font-size: 8pt;
+  font-weight: 600;
+  color: #10192E;
+  background: #fff;
+  border: 1px solid #C9D3E5;
+  border-radius: 0.04in;
+  padding: 0.03in 0.06in;
+  flex: 1;
+  max-width: 1.5in;
+}
+
+/* ---------- Scrollable age rows ---------- */
+.rows {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 0.04in 0.16in;
+}
+
+.rows::-webkit-scrollbar { width: 0.05in; }
+.rows::-webkit-scrollbar-thumb { background: #C9D3E5; border-radius: 0.05in; }
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.028in 0;
+  border-bottom: 1px dashed #E5EAF2;
+  font-variant-numeric: tabular-nums;
+}
+.row:last-child { border-bottom: none; }
+
+.row span {
+  font-size: 7.8pt;
+  color: #3B4763;
+  font-weight: 500;
+}
+
+.row input {
+  width: 0.55in;
+  font-size: 8pt;
+  font-weight: 600;
+  color: #10192E;
+  text-align: right;
+  border: 1px solid #C9D3E5;
+  border-radius: 0.04in;
+  padding: 0.02in 0.04in;
+  font-variant-numeric: tabular-nums;
+}
+
+.row input:focus {
+  outline: none;
+  border-color: #2A6DF4;
+  box-shadow: 0 0 0 0.02in rgba(42, 109, 244, 0.25);
+}
+
+/* ---------- Footer / result ---------- */
+.foot {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.08in;
+  padding: 0.07in 0.16in;
+  background: #EAF6EF;
+  border-top: 1px solid #D3EADB;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.result-label {
+  font-size: 6.8pt;
+  color: #3F7A5D;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.result-value {
+  font-size: 15pt;
+  font-weight: 800;
+  color: #0E7C55;
+  font-variant-numeric: tabular-nums;
+}
+
+#resetBtn {
+  background: #fff;
+  color: #D9662B;
+  border: 1px solid #D9662B;
+  font-size: 7.8pt;
+  font-weight: 700;
+  border-radius: 0.05in;
+  padding: 0.05in 0.11in;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#resetBtn:hover { background: #D9662B; color: #fff; }
+#resetBtn:active { transform: translateY(0.01in); }
+
+/* ---------- Print: lock the card to exactly 4in x 2.5in ---------- */
+@media print {
+  body { background: #fff; padding: 0; }
+  .card { box-shadow: none; width: 4in; height: 2.5in; }
+}
