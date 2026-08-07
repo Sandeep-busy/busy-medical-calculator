@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Medical Top-up Premium Calculator — Renewal 2026-27</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="calculator" role="group" aria-label="Medical top-up premium calculator">
+
+  <div class="screen">
+    <div class="screen-top">
+      <span class="title">Top-up Premium Calculator</span>
+      <span class="badge">Renewal 2026–27</span>
+    </div>
+
+    <div class="plan-block">
+      <span class="plan-label">Additional Coverage</span>
+      <div class="tabs" id="planTabs" role="tablist" aria-label="Additional coverage plan">
+        <button class="tab active" type="button" role="tab" aria-selected="true"
+          data-plan="Additional ₹2 Lakh Cover">
+          Additional ₹2 Lakh Cover<small>Total Coverage: ₹6 Lakh</small>
+        </button>
+        <button class="tab" type="button" role="tab" aria-selected="false"
+          data-plan="Additional ₹3 Lakh Cover">
+          Additional ₹3 Lakh Cover<small>Total Coverage: ₹7 Lakh</small>
+        </button>
+        <button class="tab" type="button" role="tab" aria-selected="false"
+          data-plan="Additional ₹4 Lakh Cover">
+          Additional ₹4 Lakh Cover<small>Total Coverage: ₹8 Lakh</small>
+        </button>
+      </div>
+    </div>
+
+    <div class="display">
+      <span class="display-label">Premium excl. GST</span>
+      <span id="total" class="display-value">₹0</span>
+    </div>
+  </div>
+
+  <div class="keys" id="rows"></div>
+
+  <p class="note">** Select members based on Age Band to determine the applicable premium.</p>
+
+  <button id="resetBtn" class="ac-key" type="button" aria-label="Reset all values">AC · Reset</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
