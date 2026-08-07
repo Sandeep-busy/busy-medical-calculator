@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Medical Top-up Premium Calculator — Renewal 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="calculator" role="group" aria-label="Medical top-up premium calculator">
+
+  <div class="screen">
+    <div class="screen-top">
+      <span class="title">Top-up Premium</span>
+      <span class="badge">Renewal 2026</span>
+    </div>
+    <select id="plan" aria-label="Additional cover amount">
+      <option value="Additional ₹2 Lakh Cover">Additional ₹2 Lakh Cover</option>
+      <option value="Additional ₹3 Lakh Cover">Additional ₹3 Lakh Cover</option>
+      <option value="Additional ₹4 Lakh Cover">Additional ₹4 Lakh Cover</option>
+    </select>
+    <div class="display">
+      <span class="display-label">Premium excl. GST</span>
+      <span id="total" class="display-value">₹0</span>
+    </div>
+  </div>
+
+  <div class="keys" id="rows"></div>
+
+  <button id="resetBtn" class="ac-key" type="button" aria-label="Reset all values">AC · Reset</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
