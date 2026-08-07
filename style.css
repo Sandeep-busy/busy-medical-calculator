@@ -1,6 +1,7 @@
 /* ---------------------------------------------------------
    BUSY — Medical Top-up Premium Calculator (Renewal 2026-27)
    Calculator-styled, sized like a chat window panel
+   Page    #FFFFFF  white background
    Body    #2B2F3A  graphite casing
    Screen  #14261E → #0B140F  LCD gradient
    Digits  #7CF7B0  LCD green digits
@@ -10,23 +11,29 @@
    Ember   #FF7A3D  AC / reset key
    --------------------------------------------------------- */
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
+html {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  font-family: "Segoe UI", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  background-color: #FFFFFF;
 }
 
 body {
+  margin: 0;
+  padding: 24px;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  background: #FFFFFF;
+  font-family: "Segoe UI", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #FFFFFF;
+  background-image: none;
 }
 
 /* ---------- Calculator casing — sized like a chat window ---------- */
@@ -36,7 +43,7 @@ body {
   border-radius: 28px;
   padding: 28px;
   box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.45),
+    0 30px 70px rgba(0, 0, 0, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
@@ -177,7 +184,7 @@ body {
   margin: 0;
   font-size: 12.5px;
   font-style: italic;
-  color: #B8C0D6;
+  color: #6B7280;
   text-align: center;
   line-height: 1.4;
 }
@@ -199,7 +206,9 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.ac-key:hover { filter: brightness(1.04); }
+.ac-key:hover {
+  filter: brightness(1.04);
+}
 
 .ac-key:active {
   transform: translateY(3px);
@@ -210,8 +219,17 @@ body {
 
 /* ---------- Responsive: narrower screens ---------- */
 @media (max-width: 640px) {
-  .calculator { padding: 18px; gap: 16px; }
-  .display-value { font-size: 32px; }
-  .keys { grid-template-columns: repeat(2, 1fr); }
-  .title { font-size: 14px; }
+  .calculator {
+    padding: 18px;
+    gap: 16px;
+  }
+  .display-value {
+    font-size: 32px;
+  }
+  .keys {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .title {
+    font-size: 14px;
+  }
 }
