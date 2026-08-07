@@ -1,1 +1,0 @@
-Open index.html or upload folder to GitHub Pages/Netlify.
