@@ -26,10 +26,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background:
-    radial-gradient(circle at 30% 10%, #2A3A63 0%, transparent 55%),
-    radial-gradient(circle at 80% 90%, #1B2A4A 0%, transparent 50%),
-    #0F1626;
+  background: #FFFFFF;
 }
 
 /* ---------- Calculator casing — sized like a chat window ---------- */
