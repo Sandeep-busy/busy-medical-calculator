@@ -1,0 +1,198 @@
+/* ---------------------------------------------------------
+   BUSY — Medical Top-up Premium Calculator (Renewal 2026)
+   Full-page, no-scroll layout
+   Ink      #10192E  header / primary text
+   Signal   #2A6DF4  brand blue
+   Paper    #F5F7FB  page background
+   Hairline #E1E6EF  borders / dividers
+   Mint     #0E7C55  positive result
+   Ember    #D9662B  reset / secondary action
+   --------------------------------------------------------- */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #F5F7FB;
+}
+
+.page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---------- Header ---------- */
+.head {
+  flex: 0 0 auto;
+  height: 9vh;
+  min-height: 48px;
+  background: #10192E;
+  border-bottom: 3px solid #2A6DF4;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(16px, 3vw, 40px);
+}
+
+.eyebrow {
+  font-size: clamp(14px, 1.9vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.badge {
+  font-size: clamp(11px, 1.3vw, 15px);
+  font-weight: 700;
+  color: #6FA0FF;
+  background: rgba(111, 160, 255, 0.12);
+  border: 1px solid rgba(111, 160, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.35em 0.9em;
+  white-space: nowrap;
+}
+
+/* ---------- Controls ---------- */
+.controls {
+  flex: 0 0 auto;
+  height: 8vh;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 clamp(16px, 3vw, 40px);
+  border-bottom: 1px solid #E1E6EF;
+  background: #fff;
+}
+
+.controls label {
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 600;
+  color: #10192E;
+  white-space: nowrap;
+}
+
+#plan {
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 600;
+  color: #10192E;
+  background: #fff;
+  border: 1px solid #C9D3E5;
+  border-radius: 6px;
+  padding: 0.35em 0.7em;
+  min-width: 160px;
+}
+
+/* ---------- Age rows: grid so everything is visible, no scroll ---------- */
+.rows {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1px;
+  background: #E1E6EF;
+  padding: 1px;
+  overflow: hidden;
+}
+
+.row {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(4px, 0.8vh, 10px);
+  padding: 4px;
+}
+
+.row span {
+  font-size: clamp(11px, 1.1vw, 15px);
+  color: #3B4763;
+  font-weight: 600;
+}
+
+.row input {
+  width: clamp(50px, 6vw, 90px);
+  font-size: clamp(13px, 1.4vw, 18px);
+  font-weight: 700;
+  color: #10192E;
+  text-align: center;
+  border: 1px solid #C9D3E5;
+  border-radius: 6px;
+  padding: 0.3em 0.2em;
+  font-variant-numeric: tabular-nums;
+}
+
+.row input:focus {
+  outline: none;
+  border-color: #2A6DF4;
+  box-shadow: 0 0 0 3px rgba(42, 109, 244, 0.2);
+}
+
+/* ---------- Footer / result ---------- */
+.foot {
+  flex: 0 0 auto;
+  height: 12vh;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 clamp(16px, 3vw, 40px);
+  background: #EAF6EF;
+  border-top: 1px solid #D3EADB;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.result-label {
+  font-size: clamp(10px, 1.1vw, 13px);
+  color: #3F7A5D;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.result-value {
+  font-size: clamp(22px, 4vw, 40px);
+  font-weight: 800;
+  color: #0E7C55;
+  font-variant-numeric: tabular-nums;
+}
+
+#resetBtn {
+  background: #fff;
+  color: #D9662B;
+  border: 2px solid #D9662B;
+  font-size: clamp(12px, 1.3vw, 16px);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.55em 1.4em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#resetBtn:hover { background: #D9662B; color: #fff; }
+#resetBtn:active { transform: translateY(1px); }
+
+/* ---------- Narrow screens: keep everything visible, no scroll ---------- */
+@media (max-width: 700px) {
+  .rows {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
